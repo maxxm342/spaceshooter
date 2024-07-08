@@ -24,7 +24,7 @@ public class spawnmanager : MonoBehaviour
 
     private IEnumerator spawnRoutine(float spawnInterval)
     {
-        while (stopspawning == false)
+        while (!stopspawning)
         {
             GameObject newenemy = Instantiate(enemy, new Vector3(Random.Range(-8f, 8f), 10, 0), Quaternion.identity);
             newenemy.transform.parent = enemycontainer.transform;

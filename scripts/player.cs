@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class player : MonoBehaviour
 {
@@ -71,11 +72,16 @@ public class player : MonoBehaviour
 
     public void damage()
     {
+
         lives--;
 
         if (lives < 1)
         {
-            Spawnmanager.onplayerdeath();
+             if (Spawnmanager != null)
+            {
+                Spawnmanager.onplayerdeath();
+            }
+            
             Destroy(gameObject);
         }
     }
